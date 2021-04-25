@@ -22,7 +22,7 @@ def load_model(model_path):
 	with open(model_path, 'rb') as f:
 		final_model = dill.load(f)
 
-modelpath = "/app/models/ml_pipeline.dill"
+modelpath = "/models/ml_pipeline.dill"
 
 
 @app.route("/", methods=["GET"])
@@ -30,9 +30,6 @@ def general():
 	return """Welcome to fraudelent prediction process. Please use 'http://<address>/predict' to POST"""
 
 @app.route("/predict", methods=["POST"])
-
-X_test = pd.read_csv("X_test.csv")
-y_test = pd.read_csv("y_test.csv")
 
 def predict():
 	data = {"success": False}
