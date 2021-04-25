@@ -37,7 +37,7 @@ def get_prediction(age, trtbps, chol, thalachh, oldpeak, caa, sex, cp, fbs, rest
     response = urllib.request.urlopen(req, jsondataasbytes)
     return json.loads(response.read())['predictions']
 
-get_prediction('Start')
+get_prediction(0.9521966015692286,0.7639557707131766,-0.2563337074803348,0.0154427855661232,0.5185139398778874,0.0,1,3,1,0,0,0,1)
 
 predictions = X_test[['age','trtbps', 'chol', 'thalachh', 'oldpeak', 'caa', 'sex', 'cp', 'fbs', 'restecg', 'exng', 'slp', 'thall']].iloc[:500].apply(lambda x: get_prediction(x[0],
                                                                                                x[1], x[2], x[3], x[4], x[5], x[6], x[7], x[8], x[9], x[10], x[11], x[12]), 1)
