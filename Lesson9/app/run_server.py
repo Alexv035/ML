@@ -27,7 +27,7 @@ modelpath = "/models/ml_pipeline.dill"
 
 @app.route("/", methods=["GET"])
 def general():
-	return """Welcome to fraudelent prediction process. Please use 'http://<address>/predict' to POST"""
+	return """Welcome to prediction process. Please use 'http://<address>/predict' to POST"""
 
 @app.route("/predict", methods=["POST"])
 
